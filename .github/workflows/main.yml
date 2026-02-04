@@ -66,8 +66,8 @@ jobs:
   Build-and-push-Docker-image:
     needs: [CodeQL-scan]
     runs-on: ubuntu-latest
-    # only build images when merged on master or tags
-    if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
+    # only build images when merged on main or tags
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
 
     permissions:
       contents: read
